@@ -38,7 +38,7 @@ public class YandexMarketSearchPage extends YandexMarketBasePage {
     @Step("Проверяем что на всех страницах результата поиска исключительно товар {productName}")
     public YandexMarketSearchPage checkResultFilterAll(String productName) {
         String nextButton = "//span[contains(text(), 'Вперёд')]";
-        
+
         while ($x(nextButton).exists()) {
             Assertions.assertTrue(checkResultFilter(productName));
             $x(nextButton).should(enabled).click();

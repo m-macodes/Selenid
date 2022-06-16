@@ -14,8 +14,7 @@ public class YandexHomePage extends BasePage {
     @Step("Переход на Yandex Market")
     public YandexMarketHomePage goToYandexMarket() {
         $x("//*[contains(@data-id, 'market')]").click();
-        switchTo().window(0).close();
-        switchTo().window(0);
+        switchTo().window(1);
         return page(YandexMarketHomePage.class);
     }
 }
